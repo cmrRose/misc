@@ -1,2 +1,5 @@
 # misc
-misc things that I want to share here
+
+What's here? 
+
+[Python script for AoD editors](https://github.com/cmrRose/misc/blob/main/addproductcolumns.py)
