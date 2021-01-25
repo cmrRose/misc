@@ -1,6 +1,10 @@
 # Python 3.6.10
 # Caroline Rose | cmr.rose@gmail.com | 01-24-2021
 
+
+# NOTES:
+# This script relies on certain assumptions; for instance, it relies on the product name including the exact text "Volume x" (e.g., "Volume 4") to count up the correct volume. If it can't find that text in the product name, it counts the product as "volume unspecified." 
+
 # ++++++++++++ ~ SCRIPT OPTIONS ~  ++++++++++++
 # Give it a file as downloaded from BigCartel. Place it in the same folder with the script. 
 # File to manipulate:
@@ -83,8 +87,11 @@ def evaluatecolumns(productname):
         # this option is still in progress. 
 
          # push name to to the list of product names and identify/create a column for it. 
-        if listingdict['product_name'] not in productnames:
-                productnames.append(listingdict['product_name'])
+        if listingdict[productname] not in productnames:
+                productnames.append(listingdict[productname])
+
+        if productname not in df:
+            print('create column ', productname) 
                 
     
 # **********************  end function defs  **********************  
